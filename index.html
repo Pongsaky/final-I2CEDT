@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Exercise table</title>
+</head>
+<body>
+    <table>
+        <caption>
+            <h2>Body weight: 72 kg</h2>
+        </caption>
+        <thead>
+            <tr>
+                <th colspan="5">List of Exercises</th>
+            </tr>
+            <tr>
+                <th>Exercises</th>
+                <th>Duration(minutes)</th>
+                <th>Day</th>
+                <th>Calories</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody id="exercise-table-body">
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    <select id="exercise-input"></select>
+                </td>
+                <td><input type="number" id="duration-input" placeholder="Enter number"></td>
+                <td>
+                    <select id="day-selector">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </td>
+                <td></td>
+                <td><button type="button" onclick="addExercise()">Add</button></td>
+            </tr>
+            <tr>
+                <td id="total-output">Total Calories: </td> 
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
