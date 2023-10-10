@@ -1,0 +1,14 @@
+p, input {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+table {
+    width: 80%; 
+    border-collapse: collapse; 
+}
+
+th, td {
+    padding: 10px; 
+    border: 1px solid #000; 
+}
