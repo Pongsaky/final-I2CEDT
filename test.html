@@ -1,0 +1,73 @@
+<div id="foodList">
+  <!-- Row 1 -->
+  <div class="foodItem">
+    <img src="food_image_1.jpg" alt="Food 1">
+    <div class="foodInfo">
+      <span>Food 1</span>
+      <span>Calories: 300 kcal</span>
+    </div>
+  </div>
+  <div class="foodItem">
+    <img src="food_image_2.jpg" alt="Food 2">
+    <div class="foodInfo">
+      <span>Food 2</span>
+      <span>Calories: 400 kcal</span>
+    </div>
+  </div>
+  <div class="foodItem">
+    <img src="food_image_3.jpg" alt="Food 3">
+    <div class="foodInfo">
+      <span>Food 3</span>
+      <span>Calories: 250 kcal</span>
+    </div>
+  </div>
+  <div class="foodItem">
+    <img src="food_image_4.jpg" alt="Food 4">
+    <div class="foodInfo">
+      <span>Food 4</span>
+      <span>Calories: 350 kcal</span>
+    </div>
+  </div>
+  <!-- Add more food items as needed -->
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button onclick="showPage(1)">Page 1</button>
+    <button onclick="showPage(2)">Page 2</button>
+    <!-- Add more page buttons as needed -->
+  </div>
+</div>
+
+<script>
+const ITEMS_PER_PAGE = 4; // Adjust this based on the number of items per page
+
+// Function to display the initial page (all items)
+function displayAllItems() {
+  const foodItems = document.querySelectorAll('.foodItem');
+
+  foodItems.forEach((item, index) => {
+    item.style.display = 'block';
+  });
+}
+
+// Display all items when the page loads
+window.onload = function() {
+  displayAllItems();
+};
+
+function showPage(pageNumber) {
+  const foodItems = document.querySelectorAll('.foodItem');
+  const startIndex = (pageNumber - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+
+  foodItems.forEach((item, index) => {
+    if (index >= startIndex && index < endIndex) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+
+</script>

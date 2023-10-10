@@ -1,17 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>Exercise table</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TDEE Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="food.css" />
 </head>
+
 <body>
+    <!---Klong Part--->
+    <div class="TDEE-calculator">
+
+        <div class="header">
+            <h1>TDEE Calculator</h1>
+        </div>
+        <div>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" step="0.1" />
+        </div>
+        <div>
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" step="1" />
+        </div>
+        <div>
+            <label for="age">Age (years):</label>
+            <input type="number" id="age" step="1" />
+        </div>
+        <div>
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="bodyFatPercentage">Body Fat Percentage (%):</label>
+            <input type="number" id="bodyFatPercentage" step="0.1" />
+        </div>
+        <div>
+            <label for="activityLevel">Activity Level:</label>
+            <select id="activityLevel">
+                <option value="1.2">Sedentary (little or no exercise)</option>
+                <option value="1.375">
+                    Lightly active (light exercise or sports 1-3 days/week)
+                </option>
+                <option value="1.55">
+                    Moderately active (moderate exercise or sports 3-5 days/week)
+                </option>
+                <option value="1.725">
+                    Very active (hard exercise or sports 6-7 days/week)
+                </option>
+                <option value="1.9">
+                    Extremely active (very hard exercise or sports and a physical job)
+                </option>
+            </select>
+        </div>
+        <div>
+            <button onclick="calculateTDEE()">Calculate TDEE</button>
+        </div>
+
+        <img id="userImage" />
+
+
+        <div id="caloriesPerWeekInput">
+            <label for="weeklyCalories">Weekly Calories Consumed:</label>
+            <input type="number" id="weeklyCalories" step="1000" />
+        </div>
+
+        <button onclick="calculateWeightChangeAndSimulate()">
+            Calorie Consume
+        </button>
+        <div class="weight">
+            <p id="startWeight"></p>
+            <p id="weightChange"></p>
+            <p id="currentWeight"></p>
+        </div>
+        <div class="caloriePerDay" id="caloriePerDay" style="visibility: hidden;">
+            <h1>Calories Per Day</h1>
+            <div class="caloriePerDayResult">
+                <p id="resultCaloriePerDay"></p>
+            </div>
+
+            <div class="caloriePerWeek" id="caloriePerWeek" style="visibility: hidden;">
+                <h1>Calories Per Week</h1>
+                <div class="caloriePerWeekResult">
+                    <p id="resultCaloriePerWeek"></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <h1>History Calorie Consuming</h1>
     <table>
-        <caption>
-            <h2>Body weight: 72 kg</h2>
-        </caption>
+        <thead>
+            <tr>
+                <th>Week</th>
+                <th>Calories</th>
+                <th>Weight</th>
+            </tr>
+        </thead>
+
+        <tbody id="historyConsumedTableBody">
+        <tfoot>
+            <!-- <tr>
+                <td>Total</td>
+                <td id="totalCalories"></td>
+                <td id="totalWeight"></td>
+            </tr> -->
+        </tfoot>
+    </table>
+
+    <!-- Food Information -->
+    <h1>Food Information</h1>
+    <!-- HTML code for the table and buttons -->
+    <table>
+        <tbody id="food-table-body"></tbody>
+    </table>
+    <button id="prev-page-btn">Previous Page</button>
+    <button id="next-page-btn">Next Page</button>
+
+    <!-- HTML code for the food details modal -->
+    <div id="food-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="food-details-name"></h2>
+            <img id="food-details-image" src="" alt="">
+            <p id="food-details-calories"></p>
+        </div>
+    </div>
+    <!-- Food Information -->
+
+
+    <!---Auto Part--->
+    <h1>Calories Calculator</h1>
+    <table>
         <thead>
             <tr>
                 <th colspan="5">List of Exercises</th>
@@ -24,14 +151,15 @@
                 <th>Note</th>
             </tr>
         </thead>
-        <tbody id="exercise-table-body">
-        </tbody>
+        <tbody id="exercise-table-body"></tbody>
         <tfoot>
             <tr>
                 <td>
                     <select id="exercise-input"></select>
                 </td>
-                <td><input type="number" id="duration-input" placeholder="Enter number"></td>
+                <td>
+                    <input type="number" id="duration-input" placeholder="Enter number" />
+                </td>
                 <td>
                     <select id="day-selector">
                         <option value="1">1</option>
@@ -47,9 +175,186 @@
                 <td><button type="button" onclick="addExercise()">Add</button></td>
             </tr>
             <tr>
-                <td id="total-output">Total Calories: </td> 
+                <td id="total-output">Total Calories:</td>
             </tr>
         </tfoot>
     </table>
+    <!--------------->
+
+    <!---Schwin--->
+    <div class="mainedu">
+        <div class="edu burncal">
+            <h1>How Body Burns Calories?</h1>
+            <p>
+                : By "Metabolism process", Metabolism is process of converting food to
+                energy for entire body system e.g. Circulatory system, Respiratory
+                system
+            </p>
+            <h3>How exercise make body burns more calories?</h3>
+            <p>
+                Any exercise requires a constant supply of energy which mean body will
+                use more energy.
+            </p>
+            <br />
+        </div>
+
+        <div class="edu tdee">
+            <h1>What is TDEE?</h1>
+
+            <p>: TDEE is stand for "Total Daily Energy Expenditure"</p>
+            <p>In short, It's an approximation of Energy you use in a day.</p>
+            <h3>An Application of TDEE for Losing Weight</h3>
+            <p>
+                "If we consume slightly less energy than TDEE every day, you will
+                slowly slimmer"
+            </p>
+            <img class="edupic"
+                src="https://i0.wp.com/fitnitiative.co.uk/wp-content/uploads/2021/07/Add-a-heading.png?w=1080&ssl=1" />
+            <h3>What are The Factors?</h3>
+            <ul>
+                <li>Sex</li>
+                <li>Age</li>
+                <li>Weight</li>
+                <li>Height</li>
+                <li>Activity</li>
+                <li>Body Fat</li>
+            </ul>
+            <p>Some simple equation of TDEE</p>
+            <p>
+                TDEE = [ 10 x weight (kg) + 6.25 x height (cm) - 5 x age (years) + 5 ]
+                x Activity factor
+            </p>
+            <br />
+        </div>
+
+        <div class="edu bmr">
+            <h1>What is BMR?</h1>
+            <p>: BMR or "Basal Metabolic Rate"</p>
+            <p>
+                BMR represents the minimum amount of energy (in calories) your body
+                requires to keep you alive and functioning while you're in a state of
+                complete rest, such as when you're asleep
+            </p>
+            <h3>How to calculate the BMR?</h3>
+            <p>
+                Female : 655 + (9.6 x weight in kg) + (1.8 x height in cm) - (4.7 x
+                age in years)
+            </p>
+            <p>
+                Male : 66 + (13.7 x weight in kg) + (5 x height in cm) - (6.8 x age in
+                years)
+            </p>
+            <h3>What are the factors</h3>
+            <ul>
+                <li>Age</li>
+                <li>Gender</li>
+                <li>Body Composition (muscle mass versus fat)</li>
+                <li>Genetics</li>
+            </ul>
+        </div>
+
+        <div class="edu bmi">
+            <h1>What is BMI?</h1>
+            <p>
+                Body Mass Index : a numerical measure of a person's body fat based on
+                their weight and height
+            </p>
+            <p>The formula to calculate BMI</p>
+            <p>BMI = (weight in kilograms) / (height in meters)Â²</p>
+            <table border="1">
+                <tr>
+                    <th>Category</th>
+                    <th>BMI Range</th>
+                </tr>
+                <tr>
+                    <td>Underweight</td>
+                    <td>BMI less than 18.5</td>
+                </tr>
+                <tr>
+                    <td>Normal weight</td>
+                    <td>BMI between 18.5 and 24.9</td>
+                </tr>
+                <tr>
+                    <td>Overweight</td>
+                    <td>BMI between 25 and 29.9</td>
+                </tr>
+                <tr>
+                    <td>Obesity (Class I)</td>
+                    <td>BMI between 30 and 34.9</td>
+                </tr>
+                <tr>
+                    <td>Obesity (Class II)</td>
+                    <td>BMI between 35 and 39.9</td>
+                </tr>
+                <tr>
+                    <td>Obesity (Class III)</td>
+                    <td>BMI 40 or greater</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="edu bodyfat">
+            <h1>What is Body Fat?</h1>
+
+            <p>: The excess calories from food transform to fats.</p>
+            <h3>The Simple Way to Measure Body Fat at Home</h3>
+            <ul>
+                Body circumference measurements
+                <p>
+                    - Women : 163.205 x log10(waist + hip - neck) - 97.684 x
+                    log10(height) - 78.387
+                </p>
+                <p>
+                    - Men : 86.010 x log10 (abdomen - neck) - 70.041 x log10 (height) +
+                    36.76
+                </p>
+            </ul>
+            <br />
+        </div>
+
+        <div class="edu active">
+            <h1>What is "Activity Level"?</h1>
+            <p>: A rough indicator to show how active you are</p>
+
+            <h3>What are each level represented?</h3>
+            <ul>
+                <p>
+                    Sedentary: Only do a daily activity e.g., walking, taking out the
+                    trash.
+                </p>
+                <p>
+                    Lightly Active: Doing some intentionally light exercise e.g., slow
+                    jogging
+                </p>
+                <p>
+                    Moderately Active: Doing an intentional exercise everyday e.g.,
+                    Jogging for at least 50 minutes
+                </p>
+                <p>
+                    Very Active: You spend most of the day doing something physical
+                    e.g., physical job, athlete or walking for at least 4 hours.
+                </p>
+            </ul>
+            <br />
+        </div>
+
+        <div class="edu nutrition">
+            <h1>How does Good Food Support Weight Loss?</h1>
+            <p>
+                Because good food with full of nutrients can make you full longer, but
+                processed foods are nutrient deficiency which cause cravings.
+            </p>
+            <p>
+                In conclusion the more energy you consume, the more weight you will
+                gain.
+            </p>
+        </div>
+    </div>
+    <!--------------->
+
+    <script src="TDEE.js"></script>
+    <script src="food.js"></script>
+    <script src="exercise.js"></script>
 </body>
+
 </html>

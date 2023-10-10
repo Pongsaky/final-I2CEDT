@@ -1,7 +1,6 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+p, input {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 table {

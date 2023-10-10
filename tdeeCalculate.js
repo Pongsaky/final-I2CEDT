@@ -21,9 +21,7 @@ function calculateTDEE() {
         } else if (gender === 'female') {
             TDEE = (10 * weight + 6.25 * height - 5 * age - 161) * activityLevel;
         }
-
         bodyFatPercentage = weight / ((height/100)**2);
-
     }
 
     const resultElement = document.getElementById('result');
