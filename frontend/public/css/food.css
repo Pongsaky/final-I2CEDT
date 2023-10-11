@@ -40,7 +40,7 @@
 /* CSS code for minimal food details */
 
 .food-image {
-  cursor: pointer;
+  /* cursor: pointer; */
   width: 150px;
   height: 150px;
   object-fit: cover;
