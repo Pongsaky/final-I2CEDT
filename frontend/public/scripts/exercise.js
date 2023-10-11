@@ -1,6 +1,6 @@
 //Auto Part
 async function loadNames() {
-  const response = await fetch("../assets/calories_burned.json");
+  const response = await fetch("/frontend/public/assets/calories_burned.json");
   const names = await response.json();
   const exerciseInput = document.getElementById("exercise-input-value");
   var activity = names["exercise 1 hour"];
