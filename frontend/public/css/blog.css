@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 body{
     font-family:'Inter', sans-serif;
     margin: 0;
@@ -7,94 +9,449 @@ body{
     background-color: #333333;
     color: white;
 }
-.projcard-container {
-    margin: 50px 0;
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 10px;
+    margin-top: 40px;
+}
+:root {
+    --color: #4973ff;
   }
   
-  /* Actual Code: */
-  .projcard-container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1200px;
+  .content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
-  .projcard {
+  
+  .hero {
     position: relative;
-    width: 100%;
-    height: 300px;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    background-color: #333333;
-    border: 2px solid #ddd;
-    font-size: 24px;
-    overflow: hidden;
-    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
-    transition: transform 0.2s ease;
-  }
-  .projcard:hover {
-    transform: translate(0px, -3px);
-  }
-  .projcard::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(-70deg, #424242, transparent 50%);
-    opacity: 0.07;
-  }
-  .projcard-innerbox {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  .projcard-img {
-    position: absolute;
-    height: 300px;
-    width: 400px;
-    top: 0;
-    left: 0;
-    transition: transform 0.2s ease;
-  }
-  .projcard:hover .projcard-img {
-    transform: scale(1.05) rotate(1deg);
-  }
-  .projcard:hover .projcard-bar {
-    width: 70px;
-  }
-  .projcard-textbox {
-    position: absolute;
-    top: 7%;
-    bottom: 7%;
-    left: 430px;
-    width: calc(100% - 470px);
-    font-size: 2rem;
-  }
-  .projcard-textbox * {
-    position: relative;
-  }
-  .projcard-bar {
-    left: -2px;
-    width: 50px;
-    height: 5px;
-    margin: 10px 0;
-    border-radius: 5px;
-    background-color: #424242;
-    transition: width 0.2s ease;
-  }
-  .projcard-title{
-    font-weight: 600;
-  }
-  .projcard-blue .projcard-bar { background-color: #0088FF; }
-  .projcard-blue::before { background-image: linear-gradient(-70deg, #0088FF, transparent 50%); }
-  .projcard-blue:nth-child(2n)::before { background-image: linear-gradient(-250deg, #0088FF, transparent 50%); }
-  .projcard-description {
-    z-index: 10;
-    font-size: 1rem;
+    background: #333333;
     color: white;
-    height: 125px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
+  
+  .hero h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 4.5rem;
+    margin: 0 0 10px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .hero p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.4;
+  }
+ #hero-button{
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  margin: 0 0 10px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.9);
+ }
+ #hero-button:hover{
+  color: #1b2b5f;
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  margin: 0 0 10px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+ }
+  /* ========================= */
+  
+  .waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 250px;
+    background-color: var(--color);
+    transition: 500ms;
+  }
+  
+  .waves::before,
+  .waves::after {
+    content: '';
+    position: absolute;
+    width: 300vw;
+    height: 310vw;
+    top: -65vw;
+    left: 50%;
+    transform: translate(-50%, -75%);
+  }
+  
+  .waves::before {
+    border-radius: 44%;
+    background: rgba(51, 51, 51, 1);
+    animation: waves 8s linear infinite;
+  }
+  
+  .waves::after {
+    border-radius: 44%;
+    background: rgba(51, 51, 51, 0.5);
+    animation: waves 15s linear infinite;
+  }
+  
+  @keyframes waves {
+    0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+    
+    100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }
+#header{
+  height: 200px;
+    background-image: linear-gradient(to bottom, #4973ff 10%, #333333);
+    
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+#TDEE-calculator{
+    height: 900px;
+    width: 70%;
+    background-color: #505050;
+    color: white;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: #00000029 5px 5px 5px;
+    font-weight: 600;
+}
+#inner-TDEE-calculator{
+  display: flex;
+  justify-content: center;
+}
+#TDEE-input-value{
+  width: 50%;
+}
+#TDEE-output-value{
+  width: 50%;
+}
+#TDEE-img{
+  width: 226px;
+  height: 486px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+#resultCaloriePerDay, #resultCaloriePerWeek{
+  color: #537bfc;
+}
+#TDEE-wait-input{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input{
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #b8b8b8;
+    border-radius: 5px;
+}
+.TDEE-input{
+    margin-bottom: 10px;
+}
+button{
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #4973ff;
+    border-radius: 10px;
+    background-color: #4973ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: 0.5s;
+}
+button:hover{
+    background-color: #3453b9;
+    border: 1px solid #3453b9;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#historyConsumedTable{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+}
+#exercise-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#input-body{
+  display: flex;
+}
+select{
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #b8b8b8;
+    border-radius: 5px;
+}
+#exercise-output{
+  font-weight: 700;
+  font-style: 2rem;
+  margin: 10px;
+  padding: 10px;
+  color: #4973ff ;
+  border-radius: 5px;
+  background-color: white;
+}
+#historyConsumed{
+  margin-top: 80px;
+  margin-bottom: 90px;
+}
+#historyConsumedTable{
+  position: relative;
+  top: 30px;
+  width: 50%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.projcard-container {
+  margin: 50px 0;
+}
+
+/* Actual Code: */
+.projcard-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+}
+.projcard {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: #333333;
+  border: 2px solid #ddd;
+  font-size: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
+  transition: transform 0.2s ease;
+}
+.projcard:hover {
+  transform: translate(0px, -3px);
+}
+.projcard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(-70deg, #424242, transparent 50%);
+  opacity: 0.07;
+}
+.projcard-innerbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.projcard-img {
+  position: absolute;
+  height: 300px;
+  width: 400px;
+  top: 0;
+  left: 0;
+  transition: transform 0.2s ease;
+}
+.projcard:hover .projcard-img {
+  transform: scale(1.05) rotate(1deg);
+}
+.projcard:hover .projcard-bar {
+  width: 70px;
+}
+.projcard-textbox {
+  position: absolute;
+  top: 7%;
+  bottom: 7%;
+  left: 430px;
+  width: calc(100% - 470px);
+  font-size: 2rem;
+}
+.projcard-textbox * {
+  position: relative;
+}
+.projcard-bar {
+  left: -2px;
+  width: 50px;
+  height: 5px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #424242;
+  transition: width 0.2s ease;
+}
+.projcard-title{
+  font-weight: 600;
+}
+.projcard-blue .projcard-bar { background-color: #0088FF; }
+.projcard-blue::before { background-image: linear-gradient(-70deg, #0088FF, transparent 50%); }
+.projcard-blue:nth-child(2n)::before { background-image: linear-gradient(-250deg, #0088FF, transparent 50%); }
+.projcard-description {
+  z-index: 10;
+  font-size: 1rem;
+  color: white;
+  height: 125px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#edu-burncal{
+  display: flex;
+}
+#edu-burncal-text{
+  width: 50%;
+}
+#Calories-Calculator{
+  position: relative;
+  top: 2rem;
+  height: auto;
+  width: 40%;
+  background-color: #505050;
+  color: white;
+  padding: 2px;
+  margin: 50px auto 100px auto;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: #00000029 7px 7px 7px;
+  font-weight: 600;
+}
+#inner-Calories-Calculator{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#button-submit{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.edupic{
+  width: 450px;
+  height: auto;
+  border-radius: 20px;
+  border: #b8b8b8 2px solid;
+  margin: 10px;
+}
+#edu_tdee{
+  margin: 100px 0px 100px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+
+}
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+  width: 70%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  transition: 0.5s ease;
+}
+.tabs label {
+	order: 1; 
+	display: block;
+	padding: 1rem 2rem;
+	margin-right: 0.2rem;
+	cursor: pointer;
+  background: #4973ff;
+  font-weight: bold;
+  transition: background ease 0.5s;
+}
+.tabs .tab {
+  order: 99; 
+  flex-grow: 1;
+	width: 100%;
+	display: none;
+  padding: 1rem;
+  background: #505050;
+  border-radius: 0 20px 20px 20px;
+  box-shadow: #00000029 7px 7px 7px;
+}
+.tabs input[type="radio"] {
+	display: none;
+  transition: 0.5s
+}
+.tabs input[type="radio"]:checked + label {
+	background: #505050;
+}
+.tabs input[type="radio"]:hover + label {
+	background: #3453b9;
+}
+.tabs input[type="radio"]:checked + label + .tab {
+	display: block;
+  transition: 0.5s
+}
+
+.edu_nutrition{
+  height: auto;
+  background-color: #505050;
+}
+.inner-edu_nutrition{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+@media (max-width: 45em) {
+  .tabs .tab,
+  .tabs label {
+    order: initial;
+  }
+  .tabs label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
+}
+table {
+    width: 80%; 
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px; 
+    border: 4px solid rgb(100, 100, 100);
+}
+}
+
+/* Medium screens */
+@media only screen and (max-width: 900px) {
+  /* Add styles for medium screens here */
+}
+
+/* Large screens */
+@media only screen and (min-width: 1200px) {
+  /* Add styles for large screens here */
+}
+

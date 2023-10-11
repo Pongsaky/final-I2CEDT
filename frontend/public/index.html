@@ -26,7 +26,8 @@
     </div>
     <!---Klong Part--->
     <div id="TDEE-calculator">
-
+        <div id="inner-TDEE-calculator">
+        <div id="TDEE-input-value">
         <div id="header-TDEE-container">
             <h1>TDEE Calculator</h1>
         </div>
@@ -75,10 +76,6 @@
         <div>
             <button onclick="calculateTDEE()" class="button-cal">Calculate TDEE</button>
         </div>
-
-        <img id="userImage" />
-
-
         <div id="caloriesPerWeekInput">
             <label for="weeklyCalories">Weekly Calories Consumed:</label>
             <input type="number" id="weeklyCalories" step="1000" />
@@ -87,6 +84,15 @@
         <button onclick="calculateWeightChangeAndSimulate()" class="button-cal">
             Calorie Consume
         </button>
+        </div>
+
+        <div id="TDEE-output-value">
+            <div id="TDEE-wait-input" >
+                <h1>Enter Your Information</h1>
+            </div>
+        <div id="TDEE-img">
+            <img src=""id="userImage" />
+        </div>
 
         <div>
         <div class="weight">
@@ -95,18 +101,20 @@
             <p id="currentWeight"></p>
         </div id="popup-result">
             <div class="caloriePerDay" id="caloriePerDay" style="visibility: hidden;">
-                <h1>Calories Per Day</h1>
                     <div class="caloriePerDayResult">
-                        <p id="resultCaloriePerDay"></p>
+                        <h1 id="resultCaloriePerDay"></h1>
                     </div>
+                    <p>Calories Per Day</p>
 
-                    <div class="caloriePerWeek" id="caloriePerWeek" style="visibility: hidden;">
-                        <h1>Calories Per Week</h1>
-                        <div class="caloriePerWeekResult">
-                            <p id="resultCaloriePerWeek"></p>
-                        </div>
+            <div class="caloriePerWeek" id="caloriePerWeek" style="visibility: hidden;">
+                    <div class="caloriePerWeekResult">
+                        <h1 id="resultCaloriePerWeek"></h1>
+                    </div>
+                    <p>Calories Per Week</p>
                     </div>
             </div>
+        </div>
+        </div>
         </div>
     </div>
 
