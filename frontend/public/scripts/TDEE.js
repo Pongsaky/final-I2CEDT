@@ -122,15 +122,15 @@ function calculateWeightChangeAndSimulate() {
   caloriesDificitTotal += weeklyCalories - TDEE * 7;
 
   const weightChangeKg = caloriesDificitTotal / 7700;
-  weight += weightChangeKg;
+  // weight += weightChangeKg;
 
   updateWeight(weightChangeKg);
   updatePhoto(bodyFatPercentage + weightChangeKg / 2);
-  addHistoryConsumed(weeklyCalories);
+  addHistoryConsumed(weeklyCalories, weightChangeKg);
 }
 
 // Adding History consuming after click calories consumed button
-function addHistoryConsumed(calorie) {
+function addHistoryConsumed(calorie, weightChangeKg) {
   const tableBody = document.getElementById("historyConsumedTableBody");
   const newRow = document.createElement("tr");
 
@@ -140,7 +140,7 @@ function addHistoryConsumed(calorie) {
   
   weekCell.textContent = "Week " + (tableBody.childElementCount + 1);
   calorieCell.textContent = calorie;
-  weightCell.textContent = weight.toFixed(2);
+  weightCell.textContent = (weight + weightChangeKg).toFixed(2);
 
   newRow.appendChild(weekCell);
   newRow.appendChild(calorieCell);
