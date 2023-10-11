@@ -3,6 +3,8 @@ const foodTableBody = document.getElementById("food-table-body");
 const prevPageBtn = document.getElementById("prev-page-btn");
 const nextPageBtn = document.getElementById("next-page-btn");
 
+const foodGridContainer = document.getElementById("food-grid-container");
+
 const foods = [
   {
     name: "หมูทอดกระเทียม",
@@ -201,19 +203,92 @@ function updateTable() {
     });
 }
 
-prevPageBtn.addEventListener("click", () => {
-  currentPage--;
-  updateTable();
-});
+// prevPageBtn.addEventListener("click", () => {
+//   currentPage--;
+//   updateTable();
+// });
 
-nextPageBtn.addEventListener("click", () => {
-  currentPage++;
-  updateTable();
-});
+// nextPageBtn.addEventListener("click", () => {
+//   currentPage++;
+//   updateTable();
+// });
 
 // Add click event listener to close button in food details modal
 // document.getElementsByClassName("close")[0].addEventListener("click", () => {
 //   document.getElementById("food-details-modal").style.display = "none";
 // });
 
-updateTable();
+// updateTable();
+
+
+// Function to create a new food grid item
+function createFoodGridItem(food) {
+  const foodGridItem = document.createElement("div");
+  foodGridItem.classList.add("food-grid-item");
+
+  const foodImage = document.createElement("img");
+  foodImage.src = food.image;
+  foodImage.alt = food.name;
+  foodGridItem.appendChild(foodImage);
+
+  const foodName = document.createElement("h3");
+  foodName.textContent = food.name;
+  foodGridItem.appendChild(foodName);
+
+  const foodCalories = document.createElement("p");
+  foodCalories.textContent = `Calories: ${food.calories}`;
+  foodGridItem.appendChild(foodCalories);
+
+  const foodProtein = document.createElement("p");
+  foodProtein.textContent = `Protein: ${food.protein} g`;
+  foodGridItem.appendChild(foodProtein);
+
+  const foodCarbs = document.createElement("p");
+  foodCarbs.textContent = `Carbs: ${food.carbonhydrate} g`;
+  foodGridItem.appendChild(foodCarbs);
+
+  const foodFat = document.createElement("p");
+  foodFat.textContent = `Fat: ${food.fat} g`;
+  foodGridItem.appendChild(foodFat);
+
+  return foodGridItem;
+}
+
+// Function to populate the food grid container with food items
+function populateFoodGrid(foodData, page) {
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const foodsToShow = foodData.slice(startIndex, endIndex);
+
+  foodGridContainer.innerHTML = "";
+
+  for (let i = 0; i < foodsToShow.length; i++) {
+    const foodGridItem = createFoodGridItem(foodsToShow[i]);
+    foodGridContainer.appendChild(foodGridItem);
+  }
+}
+
+// Function to handle the click event of the previous page button
+function handlePrevPageClick() {
+  if (currentPage > 1) {
+    currentPage--;
+    populateFoodGrid(foods, currentPage);
+  }
+}
+
+// Function to handle the click event of the next page button
+function handleNextPageClick() {
+  const totalPages = Math.ceil(foods.length / itemsPerPage);
+
+  if (currentPage < totalPages) {
+    currentPage++;
+    populateFoodGrid(foods, currentPage);
+  }
+}
+
+// Add event listeners to the previous and next page buttons
+prevPageBtn.addEventListener("click", handlePrevPageClick);
+nextPageBtn.addEventListener("click", handleNextPageClick);
+
+// Populate the food grid container with the first page of food items
+populateFoodGrid(foods, currentPage);
