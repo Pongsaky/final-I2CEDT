@@ -4,22 +4,82 @@ const prevPageBtn = document.getElementById("prev-page-btn");
 const nextPageBtn = document.getElementById("next-page-btn");
 
 const foods = [
-  { name: "Apple", calories: 95, image: "https://via.placeholder.com/150" },
-  { name: "Banana", calories: 105, image: "https://via.placeholder.com/150" },
-  { name: "Carrot", calories: 25, image: "https://via.placeholder.com/150" },
-  { name: "Orange", calories: 62, image: "https://via.placeholder.com/150" },
-  { name: "Grapes", calories: 52, image: "https://via.placeholder.com/150" },
-  { name: "Broccoli", calories: 55, image: "https://via.placeholder.com/150" },
-  { name: "Potato", calories: 130, image: "https://via.placeholder.com/150" },
-  { name: "Tomato", calories: 22, image: "https://via.placeholder.com/150" },
-  { name: "Spinach", calories: 23, image: "https://via.placeholder.com/150" },
-  { name: "Chicken", calories: 335, image: "https://via.placeholder.com/150" },
-  { name: "Beef", calories: 250, image: "https://via.placeholder.com/150" },
-  { name: "Salmon", calories: 206, image: "https://via.placeholder.com/150" },
-  { name: "Tuna", calories: 184, image: "https://via.placeholder.com/150" },
-  { name: "Egg", calories: 78, image: "https://via.placeholder.com/150" },
-  { name: "Cheese", calories: 113, image: "https://via.placeholder.com/150" },
-  { name: "Yogurt", calories: 150, image: "https://via.placeholder.com/150" },
+  {
+    name: "หมูทอดกระเทียม",
+    calories: 200,
+    image: "../assets/img/food/01_หมูทอดกระเทียม.jpg",
+  },
+  {
+    name: "ข้าวมันไก่",
+    calories: 515,
+    image: "../assets/img/food/02_ข้าวมันไก่.jpg",
+  },
+  {
+    name: "ข้าวหมูแดง",
+    calories: 438,
+    image: "../assets/img/food/03_ข้าวหมูแดง.jpg",
+  },
+  {
+    name: "ข้าวผัดกระเพราไก่",
+    calories: 554,
+    image: "../assets/img/food/04_ข้าวผัดกระเพราไก่.jpg",
+  },
+  {
+    name: "ผัดผักบุ้ง",
+    calories: 210,
+    image: "../assets/img/food/05_ผัดผักบุ้ง.jpg",
+  },
+  {
+    name: "แกงจืดเต้าหู้หมูสับ",
+    calories: 110,
+    image: "../assets/img/food/06_แกงจืดเต้าหู้หมูสับ.jpg",
+  },
+  { name: "ผัดไท", calories: 303, image: "../assets/img/food/07_ผัดไท.jpg" },
+  {
+    name: "เต้าหู้ทรงเครื่อง",
+    calories: 164,
+    image: "../assets/img/food/08_เต้าหู้ทรงเครื่อง.jpg",
+  },
+  {
+    name: "ต้มยำกุ้ง",
+    calories: 65,
+    image: "../assets/img/food/09_ต้มยำกุ้ง.jpg",
+  },
+  {
+    name: "ไข่พะโล้",
+    calories: 460,
+    image: "./assets/img/food/10_ไข่พะโล้.jpg",
+  },
+  {
+    name: "ต้มยำปลากรอบ",
+    calories: 152,
+    image: "../assets/img/food/11_ต้มยำปลากรอบ.jpg",
+  },
+  {
+    name: "แกงจืดรวมมิตรทะเล",
+    calories: 185,
+    image: "../assets/img/food/12_แกงจืดรวมมิตรทะเล.jpg",
+  },
+  {
+    name: "ข้าวต้มปลา",
+    calories: 220,
+    image: "../assets/img/food/13_ข้าวต้มปลา.jpg",
+  },
+  {
+    name: "ยำปลาดุกฟู",
+    calories: 323,
+    image: "../assets/img/food/14_ยำปลาดุกฟู.jpg",
+  },
+  {
+    name: "ทอดมันปลา",
+    calories: 220,
+    image: "../assets/img/food/15_ทอดมันปลา.jpg",
+  },
+  {
+    name: "น้ำพริกอ่อง",
+    calories: 520,
+    image: "../assets/img/food/16_น้ำพริกอ่อง.jpg",
+  },
 ];
 
 const itemsPerPage = 8;
