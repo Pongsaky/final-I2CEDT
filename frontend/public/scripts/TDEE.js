@@ -40,8 +40,8 @@ function calculateTDEE() {
   const resultCaloriePerDay = document.getElementById("resultCaloriePerDay");
   const resultCaloriePerWeek = document.getElementById("resultCaloriePerWeek");
 
-  resultCaloriePerDay.innerHTML = `TDEE: ${TDEE.toFixed(2)} calories per day`;
-  resultCaloriePerWeek.innerHTML = `TDEE: ${(TDEE*7).toFixed(2)} calories per week`;
+  resultCaloriePerDay.innerHTML = `${TDEE.toFixed(2)} `;
+  resultCaloriePerWeek.innerHTML = `${(TDEE*7).toFixed(2)} `;
 
   const startWeight = document.getElementById("startWeight");
   startWeight.innerHTML = `Start weight: ${weight.toFixed(2)} kg`;
@@ -56,6 +56,8 @@ function calculateTDEE() {
   document.getElementById("caloriePerWeek").style.visibility = "visible";
 
   updatePhoto(bodyFatPercentage);
+
+  document.getElementById("TDEE-wait-input").style.display = "none";
 }
 
 function updatePhoto(bodyFatPercentage) {

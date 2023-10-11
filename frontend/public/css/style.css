@@ -104,6 +104,7 @@ h1{
   
   @keyframes waves {
     0% {
+
       transform: translate(-50%, -75%) rotate(0deg);
     }
     
@@ -120,16 +121,42 @@ h1{
     text-align: center;
 }
 #TDEE-calculator{
-    height: auto;
-    width: 40%;
+    height: 900px;
+    width: 70%;
     background-color: #505050;
     color: white;
-    padding: 2px;
-    margin: 0px auto 0 auto;
+    margin: 0px auto 0px auto;
     text-align: center;
     border-radius: 20px;
     box-shadow: #00000029 5px 5px 5px;
     font-weight: 600;
+}
+#inner-TDEE-calculator{
+  display: flex;
+  justify-content: center;
+}
+#TDEE-input-value{
+  width: 50%;
+}
+#TDEE-output-value{
+  width: 50%;
+}
+#TDEE-img{
+  width: 226px;
+  height: 486px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+#resultCaloriePerDay, #resultCaloriePerWeek{
+  color: #537bfc;
+}
+#TDEE-wait-input{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 input{
     padding: 10px;
@@ -199,6 +226,98 @@ select{
   margin: 0 auto;
   border-collapse: collapse;
 }
+.projcard-container {
+  margin: 50px 0;
+}
+
+/* Actual Code: */
+.projcard-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+}
+.projcard {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: #333333;
+  border: 2px solid #ddd;
+  font-size: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
+  transition: transform 0.2s ease;
+}
+.projcard:hover {
+  transform: translate(0px, -3px);
+}
+.projcard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(-70deg, #424242, transparent 50%);
+  opacity: 0.07;
+}
+.projcard-innerbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.projcard-img {
+  position: absolute;
+  height: 300px;
+  width: 400px;
+  top: 0;
+  left: 0;
+  transition: transform 0.2s ease;
+}
+.projcard:hover .projcard-img {
+  transform: scale(1.05) rotate(1deg);
+}
+.projcard:hover .projcard-bar {
+  width: 70px;
+}
+.projcard-textbox {
+  position: absolute;
+  top: 7%;
+  bottom: 7%;
+  left: 430px;
+  width: calc(100% - 470px);
+  font-size: 2rem;
+}
+.projcard-textbox * {
+  position: relative;
+}
+.projcard-bar {
+  left: -2px;
+  width: 50px;
+  height: 5px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #424242;
+  transition: width 0.2s ease;
+}
+.projcard-title{
+  font-weight: 600;
+}
+.projcard-blue .projcard-bar { background-color: #0088FF; }
+.projcard-blue::before { background-image: linear-gradient(-70deg, #0088FF, transparent 50%); }
+.projcard-blue:nth-child(2n)::before { background-image: linear-gradient(-250deg, #0088FF, transparent 50%); }
+.projcard-description {
+  z-index: 10;
+  font-size: 1rem;
+  color: white;
+  height: 125px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 #edu-burncal{
   display: flex;
 }
@@ -213,7 +332,7 @@ select{
   background-color: #505050;
   color: white;
   padding: 2px;
-  margin: 50px auto 100px auto;
+  margin: 30px auto 100px auto;
   text-align: center;
   border-radius: 20px;
   box-shadow: #00000029 7px 7px 7px;
