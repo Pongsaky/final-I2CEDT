@@ -1,6 +1,6 @@
 //Auto Part
 async function loadNames() {
-  const response = await fetch("/frontend/public/assets/calories_burned.json");
+  const response = await fetch("../assets/calories_burned.json");
   const names = await response.json();
   const exerciseInput = document.getElementById("exercise-input-value");
   var activity = names["exercise 1 hour"];
@@ -17,11 +17,41 @@ async function loadNames() {
     exerciseInput.appendChild(option);
   });
 
-  var totalrow = document.getElementById("total-output");
-  totalrow.innerText = "Total Calories: " + total;
+  // var totalrow = document.getElementById("total-output");
+  // totalrow.innerText = "Total Calories: " + total;
 }
 
 loadNames();
+
+function calculateExceriseCalorie() {
+  var input1 = document.getElementById("exercise-input");
+  var exercise = input1.value;
+  var input2 = document.getElementById("duration-input");
+  var duration = input2.value.trim();
+
+  const exerciseResult = document.getElementById("excercise-result");
+
+  console.log(exercise)
+  console.log(duration);
+
+  if (exercise !== "" && duration !== "") {
+    var sum;
+    for (const i in exerciseOptions) {
+      if (exercise == exerciseOptions[i]) {
+        console.log(calories[i]);
+        cal = calories[i][0];
+        sum = ((parseInt(cal) * parseInt(duration)) / 60);
+        sum = Math.round(sum);
+        total = sum;
+      }
+    }
+
+    // input1.value = "";
+    // input2.value = "";
+
+    exerciseResult.innerText = total + "Calories";
+  }
+}
 
 function addExercise() {
   // /*
@@ -55,6 +85,8 @@ function addExercise() {
   if (exercise !== "" && duration !== "") {
     for (const i in exerciseOptions) {
       if (exercise == exerciseOptions[i]) {
+        cal = calories[i][theasold - 1];
+        sum = ((parseInt(cal) * parseInt(duration)) / 60);
         cal = calories[i];
         sum = ((parseInt(cal) * parseInt(duration)) / 60);
         sum = Math.round(sum);
@@ -63,14 +95,21 @@ function addExercise() {
     output.innerText = "Calories Burned:  " + sum;
 
 
-    var noteCell = document.createElement("td");
-    var deleteButton = document.createElement("button");
-    deleteButton.type = "button";
-    deleteButton.textContent = "Delete";
-    deleteButton.onclick = function () {
-      deleteRow(this);
-    };
+    // var noteCell = document.createElement("td");
+    // var deleteButton = document.createElement("button");
+    // deleteButton.type = "button";
+    // deleteButton.textContent = "Delete";
+    // deleteButton.onclick = function () {
+    //   deleteRow(this);
+    // };
 
+    // noteCell.appendChild(deleteButton);
+    // newRow.appendChild(Cell1);
+    // newRow.appendChild(Cell2);
+    // newRow.appendChild(Cell3);
+    // newRow.appendChild(Cell4);
+    // newRow.appendChild(noteCell);
+    // tableBody.appendChild(newRow);
     // noteCell.appendChild(deleteButton);
     // newRow.appendChild(Cell1);
     // newRow.appendChild(Cell2);
@@ -82,7 +121,12 @@ function addExercise() {
     // input1.value = "";
     // input2.value = "";
     // input3.value = "";
+    // input1.value = "";
+    // input2.value = "";
+    // input3.value = "";
 
+    // var totalrow = document.getElementById("total-output");
+    // totalrow.innerText = "Total Calories: " + total;
     // var totalrow = document.getElementById("total-output");
     // totalrow.innerText = "Total Calories: " + total;
   }
