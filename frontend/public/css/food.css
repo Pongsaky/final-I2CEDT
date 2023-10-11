@@ -68,20 +68,24 @@
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
-.food-block-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.food-block-td{
-  width: auto;
-  border: none;
-  border-color: #aaa;
-  border-radius: 20px;
-}
 #food-table{
   width: 80%;
+}
+.food-block-td{
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border: none;
+}
+.food-block-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-color: #2d2d2d;
 }
 .food-image{
   border-radius: 10px;
@@ -110,6 +114,17 @@
 #food-details-calories {
   font-size: 18px;
   margin-top: 10px;
+
+}#food-table{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+}
+#food-table-button-container{
+  display: flex;
+  justify-content: center;
 }
 
 /* CSS code for animated food details modal */

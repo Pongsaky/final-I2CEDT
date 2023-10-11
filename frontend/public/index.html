@@ -7,6 +7,7 @@
     <title>TDEE Calculator</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/food.css" />
+    <link rel="stylesheet" href="./css/blog.css" />
 </head>
 
 <body>
@@ -109,7 +110,7 @@
         </div>
     </div>
 
-    <h1>History Calorie Consuming</h1>
+    <h1 style="text-align: center;">History Calorie Consuming</h1>
     <table id="historyConsumedTable">
         <thead>
             <tr>
@@ -131,7 +132,7 @@
 
     <!-- Food Information -->
     
-    <h1>Food Information</h1>
+    <h1 style="text-align: center;">Food Information</h1>
     <!-- HTML code for the table and buttons -->
     <table id="food-table">
         <tbody id="food-table-body"></tbody>
@@ -154,37 +155,58 @@
 
 
     <!---Auto Part--->
-    <h1>Calories Calculator</h1>
+    <h1 style="text-align: center;">Calories Calculator</h1>
         <div id="exercise-body">
-            <div>
+            <div id="input-body">
                 <div>
                     <select id="exercise-input-value"></select>
                 </div>
                 <div>
                     <input type="number" id="duration-input-value" placeholder="Enter number" />
                 </div>
-                <div id="exercise-output"></div>
-                <button onclick=addExercise()>submit</button>
             </div>
+
+            <div id="exercise-output">Calories Burned:  000</div>
+            <button onclick=addExercise()>submit</button>
         </div>
     <!--------------->
 
     <!---Schwin--->
     <div class="mainedu">
-        <div class="edu burncal">
-            <h1>How Body Burns Calories?</h1>
-            <p>
-                : By "Metabolism process", Metabolism is process of converting food to
-                energy for entire body system e.g. Circulatory system, Respiratory
-                system
-            </p>
-            <h3>How exercise make body burns more calories?</h3>
-            <p>
-                Any exercise requires a constant supply of energy which mean body will
-                use more energy.
-            </p>
-            <br />
+        <div class="projcard-container" style="color: white;">
+        <div class="projcard projcard-blue">
+            <div class="projcard-innerbox">
+              <img class="projcard-img" src="/frontend/public/assets/img/blog_img/exercise1.png" />
+              <div class="projcard-textbox">
+                <div class="projcard-title">How Body Burns Calories?</div>
+                <div class="projcard-bar"></div>
+                <div class="projcard-description">: By "Metabolism process", Metabolism is process of converting food to
+                    energy for entire body system e.g. Circulatory system, Respiratory
+                    system Your body burns calories through physical activity—taking a walk or climbing a flight of stairs. But it also 
+                    burns them by performing the most basic physiological functions. For example, breathing, maintaining body</div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="projcard-container" style="color: white;">
+            <div class="projcard projcard-blue">
+                <div class="projcard-innerbox">
+                  <img class="projcard-img" src="/frontend/public/assets/img/blog_img/exerise2.png" />
+                  <div class="projcard-textbox">
+                    <div class="projcard-title">What is "Activity Level"?</div>
+                    <div class="projcard-bar"></div>
+                    <div class="projcard-description">
+                        <p>: A rough indicator to show how active you are</p>
+                        <p>Sedentary: Only do a daily activity e.g., walking, taking out the trash.Lightly Active: Doing 
+                            some intentionally light exercise e.g., slow jogging
+                            Moderately Active: Doing an intentional exercise everyday e.g.,
+                            Jogging for at least 50 minutes</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
         <div class="edu tdee">
             <h1>What is TDEE?</h1>
@@ -295,32 +317,6 @@
                 <p>
                     - Men : 86.010 x log10 (abdomen - neck) - 70.041 x log10 (height) +
                     36.76
-                </p>
-            </ul>
-            <br />
-        </div>
-
-        <div class="edu active">
-            <h1>What is "Activity Level"?</h1>
-            <p>: A rough indicator to show how active you are</p>
-
-            <h3>What are each level represented?</h3>
-            <ul>
-                <p>
-                    Sedentary: Only do a daily activity e.g., walking, taking out the
-                    trash.
-                </p>
-                <p>
-                    Lightly Active: Doing some intentionally light exercise e.g., slow
-                    jogging
-                </p>
-                <p>
-                    Moderately Active: Doing an intentional exercise everyday e.g.,
-                    Jogging for at least 50 minutes
-                </p>
-                <p>
-                    Very Active: You spend most of the day doing something physical
-                    e.g., physical job, athlete or walking for at least 4 hours.
                 </p>
             </ul>
             <br />

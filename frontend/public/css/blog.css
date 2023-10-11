@@ -5,8 +5,11 @@ body{
     padding: 0;
     font-size: 16px;
     background-color: #333333;
-
+    color: white;
 }
+.projcard-container {
+    margin: 50px 0;
+  }
   
   /* Actual Code: */
   .projcard-container,
@@ -24,7 +27,7 @@ body{
     height: 300px;
     margin-bottom: 40px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #333333;
     border: 2px solid #ddd;
     font-size: 24px;
     overflow: hidden;
@@ -80,7 +83,7 @@ body{
     bottom: 7%;
     left: 430px;
     width: calc(100% - 470px);
-    font-size: 17px;
+    font-size: 2rem;
   }
   .projcard:nth-child(2n) .projcard-textbox {
     left: initial;
@@ -91,8 +94,7 @@ body{
     content: "";
     position: absolute;
     display: block;
-    background: #ff0000bb;
-    background: #fff;
+    background: #333333;
     top: -20%;
     left: -55px;
     height: 140%;
@@ -128,50 +130,9 @@ body{
   .projcard-blue:nth-child(2n)::before { background-image: linear-gradient(-250deg, #0088FF, transparent 50%); }
   .projcard-description {
     z-index: 10;
-    font-size: 15px;
-    color: #424242;
+    font-size: 1rem;
+    color: white;
     height: 125px;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  .projcard-tagbox {
-    position: absolute;
-    bottom: 3%;
-    font-size: 14px;
-    cursor: default;
-    user-select: none;
-    pointer-events: none;
-  }
-  .projcard-tag {
-    display: inline-block;
-    background: #E0E0E0;
-    color: #777;
-    border-radius: 3px 0 0 3px;
-    line-height: 26px;
-    padding: 0 10px 0 23px;
-    position: relative;
-    margin-right: 20px;
-    cursor: default;
-    user-select: none;
-    transition: color 0.2s;
-  }
-  .projcard-tag::before {
-    content: '';
-    position: absolute;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
-    height: 6px;
-    left: 10px;
-    width: 6px;
-    top: 10px;
-  }
-  .projcard-tag::after {
-    content: '';
-    position: absolute;
-    border-bottom: 13px solid transparent;
-    border-left: 10px solid #E0E0E0;
-    border-top: 13px solid transparent;
-    right: -10px;
-    top: 0;
   }
