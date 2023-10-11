@@ -11,7 +11,7 @@ h1{
     font-size: 2rem;
     font-weight: 700;
     margin: 10px;
-    margin-top: 70px;
+    margin-top: 40px;
 }
 :root {
     --color: #4973ff;
@@ -58,6 +58,7 @@ h1{
   color: rgba(255, 255, 255, 0.9);
  }
  #hero-button:hover{
+  color: #1b2b5f;
   position: relative;
   z-index: 1;
   font-size: 2rem;
@@ -118,13 +119,11 @@ h1{
     padding: 10px;
     text-align: center;
 }
-#header-TDEE-container{
-}
 #TDEE-calculator{
     height: auto;
     width: 40%;
-    background-color: #f7f7f7;
-    color: #000;
+    background-color: #505050;
+    color: white;
     padding: 2px;
     margin: 0px auto 0 auto;
     text-align: center;
@@ -152,7 +151,7 @@ button{
     font-weight: 700;
     transition: 0.5s;
 }
-.button-cal:hover{
+button:hover{
     background-color: #3453b9;
     border: 1px solid #3453b9;
     cursor: pointer;
@@ -189,11 +188,131 @@ select{
   border-radius: 5px;
   background-color: white;
 }
+#historyConsumed{
+  margin-top: 80px;
+  margin-bottom: 90px;
+}
+#historyConsumedTable{
+  position: relative;
+  top: 30px;
+  width: 50%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
 #edu-burncal{
   display: flex;
 }
 #edu-burncal-text{
   width: 50%;
+}
+#Calories-Calculator{
+  position: relative;
+  top: 2rem;
+  height: auto;
+  width: 40%;
+  background-color: #505050;
+  color: white;
+  padding: 2px;
+  margin: 50px auto 100px auto;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: #00000029 7px 7px 7px;
+  font-weight: 600;
+}
+#inner-Calories-Calculator{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#button-submit{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.edupic{
+  width: 450px;
+  height: auto;
+  border-radius: 20px;
+  border: #b8b8b8 2px solid;
+  margin: 10px;
+}
+#edu_tdee{
+  margin: 100px 0px 100px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+
+}
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+  width: 70%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  transition: 0.5s ease;
+}
+.tabs label {
+	order: 1; 
+	display: block;
+	padding: 1rem 2rem;
+	margin-right: 0.2rem;
+	cursor: pointer;
+  background: #4973ff;
+  font-weight: bold;
+  transition: background ease 0.5s;
+}
+.tabs .tab {
+  order: 99; 
+  flex-grow: 1;
+	width: 100%;
+	display: none;
+  padding: 1rem;
+  background: #505050;
+  border-radius: 0 20px 20px 20px;
+  box-shadow: #00000029 7px 7px 7px;
+}
+.tabs input[type="radio"] {
+	display: none;
+  transition: 0.5s
+}
+.tabs input[type="radio"]:checked + label {
+	background: #505050;
+}
+.tabs input[type="radio"]:hover + label {
+	background: #3453b9;
+}
+.tabs input[type="radio"]:checked + label + .tab {
+	display: block;
+  transition: 0.5s
+}
+
+.edu_nutrition{
+  height: auto;
+  background-color: #505050;
+}
+.inner-edu_nutrition{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+@media (max-width: 45em) {
+  .tabs .tab,
+  .tabs label {
+    order: initial;
+  }
+  .tabs label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
 }
 table {
     width: 80%; 
