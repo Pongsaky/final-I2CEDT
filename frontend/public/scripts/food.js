@@ -213,8 +213,8 @@ nextPageBtn.addEventListener("click", () => {
 });
 
 // Add click event listener to close button in food details modal
-document.getElementsByClassName("close")[0].addEventListener("click", () => {
-  document.getElementById("food-details-modal").style.display = "none";
-});
+// document.getElementsByClassName("close")[0].addEventListener("click", () => {
+//   document.getElementById("food-details-modal").style.display = "none";
+// });
 
 updateTable();

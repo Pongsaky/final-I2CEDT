@@ -119,27 +119,27 @@
     
     <h1>Food Information</h1>
     <!-- HTML code for the table and buttons -->
-    <table>
+    <table id="food-table">
         <tbody id="food-table-body"></tbody>
     </table>
     <button id="prev-page-btn">Previous Page</button>
     <button id="next-page-btn">Next Page</button>
 
     <!-- HTML code for the food details modal -->
-    <div id="food-details-modal" class="modal">
+    <!-- <div id="food-details-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2 id="food-details-name"></h2>
             <img id="food-details-image" src="" alt="">
             <p id="food-details-calories"></p>
         </div>
-    </div>
+    </div> -->
     <!-- Food Information -->
 
 
     <!---Auto Part--->
-    <h1>Calories Calculator</h1>
-    <table>
+    <h1>Exercise calorie burn calculator</h1>
+    <!-- <table>
         <thead>
             <tr>
                 <th colspan="5">List of Exercises</th>
@@ -179,7 +179,18 @@
                 <td id="total-output">Total Calories:</td>
             </tr>
         </tfoot>
-    </table>
+    </table> -->
+
+    <div class="exercise-calculator">
+        <p>Select your exercise : <select id="exercise-input"></select></p>
+        <label for="duration-input">Duration(minutes):</label>
+        <input type="number" id="duration-input" placeholder="Enter number"/>
+        <button type="button" onclick="calculateExceriseCalorie()">Calculate calorie burn</button>
+        <p id="excercise-result"></p>
+    </div>
+
+
+
     <!--------------->
 
     <!---Schwin--->

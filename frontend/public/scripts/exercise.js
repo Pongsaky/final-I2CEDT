@@ -1,6 +1,6 @@
 //Auto Part
 async function loadNames() {
-  const response = await fetch("/assets/calories burned.json");
+  const response = await fetch("../assets/calories burned.json");
   const names = await response.json();
   const exerciseInput = document.getElementById("exercise-input");
   var activity = names["exercise 1 hour"];
@@ -22,6 +22,36 @@ async function loadNames() {
 }
 
 loadNames();
+
+function calculateExceriseCalorie() {
+  var input1 = document.getElementById("exercise-input");
+  var exercise = input1.value;
+  var input2 = document.getElementById("duration-input");
+  var duration = input2.value.trim();
+
+  const exerciseResult = document.getElementById("excercise-result");
+
+  console.log(exercise)
+  console.log(duration);
+
+  if (exercise !== "" && duration !== "") {
+    var sum;
+    for (const i in exerciseOptions) {
+      if (exercise == exerciseOptions[i]) {
+        console.log(calories[i]);
+        cal = calories[i][0];
+        sum = ((parseInt(cal) * parseInt(duration)) / 60);
+        sum = Math.round(sum);
+        total = sum;
+      }
+    }
+
+    // input1.value = "";
+    // input2.value = "";
+
+    exerciseResult.innerText = total + "Calories";
+  }
+}
 
 function addExercise() {
   /*
