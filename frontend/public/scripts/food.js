@@ -152,9 +152,13 @@ function updateTable() {
         tableHtml += `
           <td class="food-block-td">
             <div class="food-block-div">
-              <img class="food-image" src="${food.image}" alt="${food.name}">
-              <p class="food-block-name">${food.name}</p>
-              <p>${food.calories} แคลเลอรี่</p>
+              <div class="food-block-img">
+                <img class="food-image" src="${food.image}" alt="${food.name}">
+              </div>
+              <div class="food-block-text">
+                <p class="food-block-name">${food.name}</p>
+                <p>${food.calories} Calories</p>
+              </div>
             </div>
           </td>
         `;
