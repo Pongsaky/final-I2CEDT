@@ -14,13 +14,14 @@
     <section class="hero">
         <div class="content">
             <h2>Hero Header</h2>
-            <p>Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non</p>  
+            <p>Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend
+                justo vel bibendum sapien massa ac turpis faucibus orci luctus non</p>
             <button id="hero-button">
                 Let's Go
             </button>
-          </div>
+        </div>
         <div class="waves"></div>
-      </section>
+    </section>
     <div id="header">
         <h1></h1>
     </div>
@@ -88,26 +89,30 @@
             Calorie Consume
         </button>
 
-        <div>
+
         <div class="weight">
             <p id="startWeight"></p>
             <p id="weightChange"></p>
             <p id="currentWeight"></p>
-        </div id="popup-result">
-            <div class="caloriePerDay" id="caloriePerDay" style="visibility: hidden;">
-                <h1>Calories Per Day</h1>
-                    <div class="caloriePerDayResult">
-                        <p id="resultCaloriePerDay"></p>
-                    </div>
-
-                    <div class="caloriePerWeek" id="caloriePerWeek" style="visibility: hidden;">
-                        <h1>Calories Per Week</h1>
-                        <div class="caloriePerWeekResult">
-                            <p id="resultCaloriePerWeek"></p>
-                        </div>
-                    </div>
-            </div>
         </div>
+        <div class="calorieResult">
+
+            <div class="caloriePerDay" id="caloriePerDay" style="visibility: visible;">
+                <h1>Calories Per Day</h1>
+                <div class="caloriePerDayResult">
+                    <p id="resultCaloriePerDay">TDEE: 2405.58 calories per day</p>
+                </div>
+            </div>
+
+            <div class="caloriePerWeek" id="caloriePerWeek" style="visibility: visible;">
+                <h1>Calories Per Week</h1>
+                <div class="caloriePerWeekResult">
+                    <p id="resultCaloriePerWeek">TDEE: 16839.09 calories per week</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
     </div>
 
     <h1 style="text-align: center;">History Calorie Consuming</h1>
@@ -131,7 +136,7 @@
     </table>
 
     <!-- Food Information -->
-    
+
     <h1 style="text-align: center;">Food Information</h1>
     <!-- HTML code for the table and buttons -->
     <table id="food-table">
@@ -156,57 +161,61 @@
 
     <!---Auto Part--->
     <h1 style="text-align: center;">Calories Calculator</h1>
-        <div id="exercise-body">
-            <div id="input-body">
-                <div>
-                    <select id="exercise-input-value"></select>
-                </div>
-                <div>
-                    <input type="number" id="duration-input-value" placeholder="Enter number" />
-                </div>
+    <div id="exercise-body">
+        <div id="input-body">
+            <div>
+                <select id="exercise-input-value"></select>
             </div>
-
-            <div id="exercise-output">Calories Burned:  000</div>
-            <button onclick=addExercise()>submit</button>
+            <div>
+                <input type="number" id="duration-input-value" placeholder="Enter duration of exercise" />
+            </div>
         </div>
+
+        <div id="exercise-output">Calories Burned: 000 calories</div>
+        <button onclick=addExercise()>submit</button>
+    </div>
     <!--------------->
 
     <!---Schwin--->
     <div class="mainedu">
         <div class="projcard-container" style="color: white;">
-        <div class="projcard projcard-blue">
-            <div class="projcard-innerbox">
-              <img class="projcard-img" src="/frontend/public/assets/img/blog_img/exercise1.png" />
-              <div class="projcard-textbox">
-                <div class="projcard-title">How Body Burns Calories?</div>
-                <div class="projcard-bar"></div>
-                <div class="projcard-description">: By "Metabolism process", Metabolism is process of converting food to
-                    energy for entire body system e.g. Circulatory system, Respiratory
-                    system Your body burns calories through physical activity—taking a walk or climbing a flight of stairs. But it also 
-                    burns them by performing the most basic physiological functions. For example, breathing, maintaining body</div>
-              </div>
+            <div class="projcard projcard-blue">
+                <div class="projcard-innerbox">
+                    <img class="projcard-img" src="assets/img/blog_img/exercise1.png" />
+                    <div class="projcard-textbox">
+                        <div class="projcard-title">How Body Burns Calories?</div>
+                        <div class="projcard-bar"></div>
+                        <div class="projcard-description">: By "Metabolism process", Metabolism is process of converting
+                            food to
+                            energy for entire body system e.g. Circulatory system, Respiratory
+                            system Your body burns calories through physical activity—taking a walk or climbing a flight
+                            of stairs. But it also
+                            burns them by performing the most basic physiological functions. For example, breathing,
+                            maintaining body</div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
 
         <div class="projcard-container" style="color: white;">
             <div class="projcard projcard-blue">
                 <div class="projcard-innerbox">
-                  <img class="projcard-img" src="/frontend/public/assets/img/blog_img/exerise2.png" />
-                  <div class="projcard-textbox">
-                    <div class="projcard-title">What is "Activity Level"?</div>
-                    <div class="projcard-bar"></div>
-                    <div class="projcard-description">
-                        <p>: A rough indicator to show how active you are</p>
-                        <p>Sedentary: Only do a daily activity e.g., walking, taking out the trash.Lightly Active: Doing 
-                            some intentionally light exercise e.g., slow jogging
-                            Moderately Active: Doing an intentional exercise everyday e.g.,
-                            Jogging for at least 50 minutes</p>
+                    <img class="projcard-img" src="assets/img/blog_img/exerise2.png" />
+                    <div class="projcard-textbox">
+                        <div class="projcard-title">What is "Activity Level"?</div>
+                        <div class="projcard-bar"></div>
+                        <div class="projcard-description">
+                            <p>: A rough indicator to show how active you are</p>
+                            <p>Sedentary: Only do a daily activity e.g., walking, taking out the trash.Lightly Active:
+                                Doing
+                                some intentionally light exercise e.g., slow jogging
+                                Moderately Active: Doing an intentional exercise everyday e.g.,
+                                Jogging for at least 50 minutes</p>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
+        </div>
 
         <div class="edu tdee">
             <h1>What is TDEE?</h1>
