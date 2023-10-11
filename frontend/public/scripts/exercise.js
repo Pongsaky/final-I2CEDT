@@ -1,6 +1,6 @@
 //Auto Part
 async function loadNames() {
-  const response = await fetch("/frontend/public/assets/calories_burned.json");
+  const response = await fetch("../assets/calories_burned.json");
   const names = await response.json();
   const exerciseInput = document.getElementById("exercise-input-value");
   var activity = names["exercise 1 hour"];
@@ -85,36 +85,36 @@ function addExercise() {
     for (const i in exerciseOptions) {
       if (exercise == exerciseOptions[i]) {
         cal = calories[i][theasold - 1];
-        sum = ((parseInt(cal) * parseInt(duration)) / 60) * parseInt(day);
+        sum = ((parseInt(cal) * parseInt(duration)) / 60);
         sum = Math.round(sum);
         total = total + sum;
       }
     }
 
-    output.textContent = sum;
+    output.textContent = "Calorie Burn : " + sum + " calories";
 
-    var noteCell = document.createElement("td");
-    var deleteButton = document.createElement("button");
-    deleteButton.type = "button";
-    deleteButton.textContent = "Delete";
-    deleteButton.onclick = function () {
-      deleteRow(this);
-    };
+    // var noteCell = document.createElement("td");
+    // var deleteButton = document.createElement("button");
+    // deleteButton.type = "button";
+    // deleteButton.textContent = "Delete";
+    // deleteButton.onclick = function () {
+    //   deleteRow(this);
+    // };
 
-    noteCell.appendChild(deleteButton);
-    newRow.appendChild(Cell1);
-    newRow.appendChild(Cell2);
-    newRow.appendChild(Cell3);
-    newRow.appendChild(Cell4);
-    newRow.appendChild(noteCell);
-    tableBody.appendChild(newRow);
+    // noteCell.appendChild(deleteButton);
+    // newRow.appendChild(Cell1);
+    // newRow.appendChild(Cell2);
+    // newRow.appendChild(Cell3);
+    // newRow.appendChild(Cell4);
+    // newRow.appendChild(noteCell);
+    // tableBody.appendChild(newRow);
 
-    input1.value = "";
-    input2.value = "";
-    input3.value = "";
+    // input1.value = "";
+    // input2.value = "";
+    // input3.value = "";
 
-    var totalrow = document.getElementById("total-output");
-    totalrow.innerText = "Total Calories: " + total;
+    // var totalrow = document.getElementById("total-output");
+    // totalrow.innerText = "Total Calories: " + total;
   }
 }
 
