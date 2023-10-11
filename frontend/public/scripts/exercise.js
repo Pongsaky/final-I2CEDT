@@ -1,6 +1,6 @@
 //Auto Part
 async function loadNames() {
-  const response = await fetch("/frontend/public/assets/calories_burned.json");
+  const response = await fetch("assets/calories_burned.json");
   const names = await response.json();
   const exerciseInput = document.getElementById("exercise-input-value");
   var activity = names["exercise 1 hour"];
@@ -92,7 +92,7 @@ function addExercise() {
         sum = Math.round(sum);
       }
     }
-    output.innerText = "Calories Burned:  " + sum;
+    output.innerText = "Calories Burned:  " + sum + " calories";
 
 
     // var noteCell = document.createElement("td");

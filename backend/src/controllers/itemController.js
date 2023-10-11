@@ -1,10 +1,10 @@
-import Food from "../models/foodModel.js";
+import Item from "../models/itemModel.js";
 
 /** @type {import("express").RequestHandler} */
 export const createItem = async (req, res) => {
   try {
-    const newFood = new Food(req.body);
-    await newFood.save();
+    const newItem = new Item(req.body);
+    await newItem.save();
 
     res.status(200).json({ message: "OK" });
   } catch (err) {
@@ -18,15 +18,15 @@ export const createItem = async (req, res) => {
 
 /** @type {import("express").RequestHandler} */
 export const getItems = async (req, res) => {
-  const foods = await Food.find();
+  const items = await Item.find();
 
-  res.status(200).json(foods);
+  res.status(200).json(items);
 };
 
 /** @type {import("express").RequestHandler} */
 export const editItem = async (req, res) => {
   try {
-    const updated = await Food.findByIdAndUpdate(req.params.id, req.body);
+    const updated = await Item.findByIdAndUpdate(req.params.id, req.body);
 
     if (updated) {
       res.status(200).json({ message: "OK" });
@@ -44,9 +44,9 @@ export const editItem = async (req, res) => {
 
 /** @type {import("express").RequestHandler} */
 export const deleteItem = async (req, res) => {
-  // TODO: Student's Work - Implement Delete Food
+  // TODO: Student's Work - Implement Delete Item
   try {
-    const deleted = await Food.findByIdAndDelete(req.params.id);
+    const deleted = await Item.findByIdAndDelete(req.params.id);
 
     if (deleted) {
       res.status(200).json({ message: "OK" });
