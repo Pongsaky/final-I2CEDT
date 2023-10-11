@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Kanit:wght@300&display=swap');
+body{
+  font-family:'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: #333333;
+  color: white;
+}
+p,h3{
+  margin: 0;
+}
 .modal {
   display: none;
   position: fixed;
@@ -40,12 +51,6 @@
 
 /* CSS code for minimal food details */
 
-.food-image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  margin-top: 10px;
-}
 
 .modal-content {
   position: relative;
@@ -56,7 +61,49 @@
   max-width: 40%;
   max-height: 80%;
 }
+/* CSS code for the food grid container */
+#food-grid-container {
+  margin-top: 40px;
+  width: 60%;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+}
 
+
+/* CSS code for the food grid item */
+.food-grid-item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #505050;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.food-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.food-text{
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  margin-bottom: 20px;
+}
+#food-table-button-container{
+  margin-top: 20px;
+}
 #food-details-modal {
   display: flex;
   justify-content: center;
@@ -87,11 +134,6 @@
   border-radius: 20px;
   background-color: #505050;
   overflow: hidden;
-}
-.food-image{
-  width: 250px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .food-block-text{
   font-family: 'Kanit', sans-serif;
@@ -134,25 +176,6 @@
 #food-table-button-container{
   display: flex;
   justify-content: center;
-}
-
-/* CSS code for the food grid container */
-#food-grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-}
-
-/* CSS code for the food grid item */
-.food-grid-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* CSS code for animated food details modal */

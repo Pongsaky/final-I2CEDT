@@ -1,19 +1,14 @@
 /* Small screens */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @media only screen and (max-width: 600px) {
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-body{
+  body{
     font-family:'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 16px;
     background-color: #333333;
     color: white;
-}
-h1{
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 10px;
-    margin-top: 40px;
+    max-width: 600px;
+    overflow: hidden;
 }
 :root {
     --color: #4973ff;
@@ -23,6 +18,7 @@ h1{
     max-width: 600px;
     margin: 0 auto;
     padding: 0 20px;
+    margin-bottom: 200px;
   }
   
   .hero {
@@ -31,14 +27,13 @@ h1{
     color: white;
     height: 100vh;
     display: flex;
-    align-items: center;
     overflow: hidden;
   }
   
   .hero h2 {
     position: relative;
     z-index: 1;
-    font-size: 4.5rem;
+    font-size: 2rem;
     margin: 0 0 10px;
     line-height: 1;
     color: rgba(255, 255, 255, 0.9);
@@ -47,7 +42,7 @@ h1{
   .hero p {
     position: relative;
     z-index: 1;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.5);
     line-height: 1.4;
   }
@@ -76,6 +71,7 @@ h1{
     bottom: 0;
     left: 0;
     right: 0;
+    width: 600px;
     height: 250px;
     background-color: var(--color);
     transition: 500ms;
@@ -106,6 +102,7 @@ h1{
   
   @keyframes waves {
     0% {
+
       transform: translate(-50%, -75%) rotate(0deg);
     }
     
@@ -121,8 +118,14 @@ h1{
     padding: 10px;
     text-align: center;
 }
+#header-TDEE{
+  font-size: 20px;
+}
+label{
+    font-size: 15px;
+}
 #TDEE-calculator{
-    height: 900px;
+    height: 600px;
     width: 70%;
     background-color: #505050;
     color: white;
@@ -160,8 +163,8 @@ h1{
   align-items: center;
 }
 input{
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 5px;
     border: 2px solid #b8b8b8;
     border-radius: 5px;
 }
@@ -227,6 +230,42 @@ select{
   margin: 0 auto;
   border-collapse: collapse;
 }
+#food-grid-container {
+  margin-top: 40px;
+  width: 60%;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+}
+.food-grid-item {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #505050;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.food-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.food-text{
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  margin-bottom: 20px;
+}
 .projcard-container {
   margin: 50px 0;
 }
@@ -235,7 +274,7 @@ select{
 .projcard-container {
   margin-left: auto;
   margin-right: auto;
-  width: 1200px;
+  width: 100px;
 }
 .projcard {
   position: relative;
@@ -273,7 +312,7 @@ select{
 .projcard-img {
   position: absolute;
   height: 300px;
-  width: 400px;
+  width: 200px;
   top: 0;
   left: 0;
   transition: transform 0.2s ease;
@@ -333,7 +372,7 @@ select{
   background-color: #505050;
   color: white;
   padding: 2px;
-  margin: 50px auto 100px auto;
+  margin: 30px auto 100px auto;
   text-align: center;
   border-radius: 20px;
   box-shadow: #00000029 7px 7px 7px;
@@ -351,19 +390,17 @@ select{
   margin-bottom: 20px;
 }
 .edupic{
-  width: 450px;
+  width: 150px;
   height: auto;
   border-radius: 20px;
   border: #b8b8b8 2px solid;
   margin: 10px;
 }
 #edu_tdee{
-  margin: 100px 0px 100px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-
+  display: block;
+}
+#TDEE_text{
+  font-size: 3px;
 }
 .tabs {
 	display: flex;
@@ -410,17 +447,19 @@ select{
 	display: block;
   transition: 0.5s
 }
-
-.edu_nutrition{
-  height: auto;
-  background-color: #505050;
-}
-.inner-edu_nutrition{
+footer{
+  width: auto;
+  background-color: #333333;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-
+  font-size: 1rem;
+  font-weight: 600;
+}
+.edu_nutrition{
+  height: auto;
+  background-color: #505050;
 }
 
 @media (max-width: 45em) {
@@ -444,7 +483,6 @@ th, td {
     border: 4px solid rgb(100, 100, 100);
 }
 }
-
 /* Medium screens */
 @media only screen and (max-width: 900px) {
   /* Add styles for medium screens here */

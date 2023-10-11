@@ -224,32 +224,38 @@ function updateTable() {
 // Function to create a new food grid item
 function createFoodGridItem(food) {
   const foodGridItem = document.createElement("div");
+  
   foodGridItem.classList.add("food-grid-item");
 
   const foodImage = document.createElement("img");
+  foodImage.classList.add("food-image");
   foodImage.src = food.image;
   foodImage.alt = food.name;
   foodGridItem.appendChild(foodImage);
 
+  const foodtext = document.createElement("div");
+  foodtext.classList.add("food-text");
+  foodGridItem.appendChild(foodtext);
+
   const foodName = document.createElement("h3");
   foodName.textContent = food.name;
-  foodGridItem.appendChild(foodName);
+  foodtext.appendChild(foodName);
 
   const foodCalories = document.createElement("p");
   foodCalories.textContent = `Calories: ${food.calories}`;
-  foodGridItem.appendChild(foodCalories);
+  foodtext.appendChild(foodCalories);
 
   const foodProtein = document.createElement("p");
   foodProtein.textContent = `Protein: ${food.protein} g`;
-  foodGridItem.appendChild(foodProtein);
+  foodtext.appendChild(foodProtein);
 
   const foodCarbs = document.createElement("p");
   foodCarbs.textContent = `Carbs: ${food.carbonhydrate} g`;
-  foodGridItem.appendChild(foodCarbs);
+  foodtext.appendChild(foodCarbs);
 
   const foodFat = document.createElement("p");
   foodFat.textContent = `Fat: ${food.fat} g`;
-  foodGridItem.appendChild(foodFat);
+  foodtext.appendChild(foodFat);
 
   return foodGridItem;
 }
@@ -262,7 +268,7 @@ function populateFoodGrid(foodData, page) {
 
   foodGridContainer.innerHTML = "";
 
-  for (let i = 0; i < foodsToShow.length; i++) {
+  for (let i = 0; i < 6; i++) {
     const foodGridItem = createFoodGridItem(foodsToShow[i]);
     foodGridContainer.appendChild(foodGridItem);
   }
