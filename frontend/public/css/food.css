@@ -41,6 +41,7 @@
 
 .food-image {
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .modal-content {
@@ -51,7 +52,30 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   max-width: 600px;
 }
-
+.food-block-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.food-block-td{
+  width: auto;
+  border: none;
+  border-color: #aaa;
+  border-radius: 20px;
+}
+#food-table{
+  width: 80%;
+}
+.food-image{
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.food-block-name{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
 #food-details-name {
   font-size: 24px;
   font-weight: bold;

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap'); 
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Open Sans', sans-serif; 
+}
+body {
+    background: hsl(257, 40%, 49%) url("/frontend/public/assets/img/bg-desktop.svg") no-repeat; 
+    padding: 20px 60px;   
+}
+header img {
+    width: 100px; 
+    filter:invert(100%);
+}
+
+main {
+    display: flex; 
+    padding-top: 55px; 
+    justify-content: space-between; 
+    margin-bottom: -20px;
+} 
+
+.left {
+    padding-right: 2.5em; 
+} 
+
+.right {
+    margin-top: 70px;
+    color: #fff;    
+}
+
+h1 {
+    font-size: 2.5em; 
+    font-family: 'Poppins';
+    padding-bottom: 20px; 
+}
+
+p {
+    line-height: 1.7;
+    opacity: .8;  
+}
+
+button {
+    padding: 15px 60px; 
+    margin-top: 30px; 
+    border-radius: 5rem;
+    border: 0; 
+    cursor: pointer; 
+    color: #674baf;
+    font-size: 1em;
+    font-weight: 600;
+    transition: 0.3s all ease;
+}
+
+button:hover {
+    color: #fff; 
+    background: hsl(300, 69%, 71%); 
+}
+
+/* footer */
+
+footer {
+    text-align: right;  
+}
+
+.fab {
+    border: 2px solid #fff; 
+    padding: 10px 10px; 
+    border-radius: 50%; 
+    margin-left: 20px; 
+    color: #fff; 
+    transition: 0.3s all ease;  
+    margin-bottom: 10px;
+}
+
+.fa-facebook-f {
+    padding: 10px 13px;   
+}
+
+.fab:hover {
+    color: #674baf;
+    border-color: #fff;
+    background-color: #fff;
+    cursor: pointer; 
+}  
+
+@media screen and (max-width: 1000px) {
+
+    main {
+        flex-direction: column; 
+    }
+
+    .left img {
+        width: 100%; 
+    }
+
+    .right {
+        padding-top: 40px; 
+        text-align: center;  
+    }
+
+    h1 {
+        font-size: 1.8em; 
+    }
+
+    button {
+        padding: 15px 90px; 
+    }
+
+    footer {
+        text-align: center;
+        padding-top: 80px;  
+    } 
+
+}

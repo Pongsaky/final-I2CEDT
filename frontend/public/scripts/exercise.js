@@ -1,8 +1,8 @@
 //Auto Part
 async function loadNames() {
-  const response = await fetch("/assets/calories burned.json");
+  const response = await fetch("/frontend/public/assets/calories_burned.json");
   const names = await response.json();
-  const exerciseInput = document.getElementById("exercise-input");
+  const exerciseInput = document.getElementById("exercise-input-value");
   var activity = names["exercise 1 hour"];
 
   for (const x in activity) {
@@ -44,24 +44,13 @@ function addExercise() {
     theasold = 4;
   }
 
-  var input1 = document.getElementById("exercise-input");
+  var input1 = document.getElementById("exercise-input-value");
   var exercise = input1.value;
-  var input2 = document.getElementById("duration-input");
+  var input2 = document.getElementById("duration-input-value");
   var duration = input2.value.trim();
-  var input3 = document.getElementById("day-selector");
-  var day = input3.value;
+  var output = document.getElementById("exercise-output");
 
-  if (exercise !== "" && duration !== "" && day != "") {
-    var tableBody = document.getElementById("exercise-table-body");
-    var newRow = document.createElement("tr");
-
-    var Cell1 = document.createElement("td");
-    Cell1.textContent = exercise;
-    var Cell2 = document.createElement("td");
-    Cell2.textContent = duration;
-    var Cell3 = document.createElement("td");
-    Cell3.textContent = day;
-
+  if (exercise !== "" && duration !== "") {
     var sum;
     for (const i in exerciseOptions) {
       if (exercise == exerciseOptions[i]) {
@@ -72,8 +61,7 @@ function addExercise() {
       }
     }
 
-    var Cell4 = document.createElement("td");
-    Cell4.textContent = sum;
+    output.textContent = sum;
 
     var noteCell = document.createElement("td");
     var deleteButton = document.createElement("button");
