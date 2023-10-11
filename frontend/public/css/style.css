@@ -151,7 +151,7 @@ button{
     font-weight: 700;
     transition: 0.5s;
 }
-.button-cal:hover{
+button:hover{
     background-color: #3453b9;
     border: 1px solid #3453b9;
     cursor: pointer;
@@ -282,6 +282,9 @@ select{
 }
 .tabs input[type="radio"]:checked + label {
 	background: #505050;
+}
+.tabs input[type="radio"]:hover + label {
+	background: #3453b9;
 }
 .tabs input[type="radio"]:checked + label + .tab {
 	display: block;
