@@ -151,14 +151,14 @@ function updateTable() {
         const food = foodsToShow[foodIndex];
         tableHtml += `
           <td class="food-block-td>
-          <div class="food-block-div">
-            <img class="food-image" src="${food.image}" alt="${food.name}">
-          <p class="food-block-name">${food.name}</p>
-          <p>${food.calories} แคลเลอรี่</p>
-          <p>คาร์โบไฮเดรต ${food.carbonhydrate} กรัม</p>
-            <p>โปรตีน ${food.protein} กรัม</p>
-            <p>ไขมัน ${food.fat} กรัม</p>
-        </div>
+            <div class="food-block-div">
+              <img class="food-image" src="${food.image}" alt="${food.name}">
+              <p class="food-block-name">${food.name}</p>
+              <p>${food.calories} แคลเลอรี่</p>
+              <p>คาร์โบไฮเดรต ${food.carbonhydrate} กรัม</p>
+              <p>โปรตีน ${food.protein} กรัม</p>
+              <p>ไขมัน ${food.fat} กรัม</p>
+              </div>
           </td>
         `;
       } else {
