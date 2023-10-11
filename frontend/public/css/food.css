@@ -40,10 +40,10 @@
 /* CSS code for minimal food details */
 
 .food-image {
-  /* cursor: pointer; */
   width: 150px;
   height: 150px;
   object-fit: cover;
+  margin-top: 10px;
 }
 
 .modal-content {
@@ -68,7 +68,30 @@
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
-
+.food-block-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.food-block-td{
+  width: auto;
+  border: none;
+  border-color: #aaa;
+  border-radius: 20px;
+}
+#food-table{
+  width: 80%;
+}
+.food-image{
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.food-block-name{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
 #food-details-name {
   font-size: 24px;
   font-weight: bold;

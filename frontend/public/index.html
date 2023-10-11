@@ -10,25 +10,38 @@
 </head>
 
 <body>
+    <section class="hero">
+        <div class="content">
+            <h2>Hero Header</h2>
+            <p>Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non</p>  
+            <button id="hero-button">
+                Let's Go
+            </button>
+          </div>
+        <div class="waves"></div>
+      </section>
+    <div id="header">
+        <h1></h1>
+    </div>
     <!---Klong Part--->
-    <div class="TDEE-calculator">
+    <div id="TDEE-calculator">
 
-        <div class="header">
+        <div id="header-TDEE-container">
             <h1>TDEE Calculator</h1>
         </div>
-        <div>
+        <div class="TDEE-input">
             <label for="weight">Weight (kg):</label>
             <input type="number" id="weight" step="0.1" />
         </div>
-        <div>
+        <div class="TDEE-input">
             <label for="height">Height (cm):</label>
             <input type="number" id="height" step="1" />
         </div>
-        <div>
+        <div class="TDEE-input">
             <label for="age">Age (years):</label>
             <input type="number" id="age" step="1" />
         </div>
-        <div>
+        <div class="TDEE-input">
             <label for="gender">Gender:</label>
             <select id="gender">
                 <option value="male">Male</option>
@@ -36,11 +49,11 @@
             </select>
         </div>
 
-        <div>
+        <div class="TDEE-input">
             <label for="bodyFatPercentage">Body Fat Percentage (%):</label>
             <input type="number" id="bodyFatPercentage" step="0.1" />
         </div>
-        <div>
+        <div class="TDEE-input">
             <label for="activityLevel">Activity Level:</label>
             <select id="activityLevel">
                 <option value="1.2">Sedentary (little or no exercise)</option>
@@ -59,7 +72,7 @@
             </select>
         </div>
         <div>
-            <button onclick="calculateTDEE()">Calculate TDEE</button>
+            <button onclick="calculateTDEE()" class="button-cal">Calculate TDEE</button>
         </div>
 
         <img id="userImage" />
@@ -70,33 +83,34 @@
             <input type="number" id="weeklyCalories" step="1000" />
         </div>
 
-        <button onclick="calculateWeightChangeAndSimulate()">
+        <button onclick="calculateWeightChangeAndSimulate()" class="button-cal">
             Calorie Consume
         </button>
+
+        <div>
         <div class="weight">
             <p id="startWeight"></p>
             <p id="weightChange"></p>
             <p id="currentWeight"></p>
-        </div>
-        <div class="caloriePerDay" id="caloriePerDay" style="visibility: hidden;">
-            <h1>Calories Per Day</h1>
-            <div class="caloriePerDayResult">
-                <p id="resultCaloriePerDay"></p>
+        </div id="popup-result">
+            <div class="caloriePerDay" id="caloriePerDay" style="visibility: hidden;">
+                <h1>Calories Per Day</h1>
+                    <div class="caloriePerDayResult">
+                        <p id="resultCaloriePerDay"></p>
+                    </div>
+
+                    <div class="caloriePerWeek" id="caloriePerWeek" style="visibility: hidden;">
+                        <h1>Calories Per Week</h1>
+                        <div class="caloriePerWeekResult">
+                            <p id="resultCaloriePerWeek"></p>
+                        </div>
+                    </div>
             </div>
-
-            <div class="caloriePerWeek" id="caloriePerWeek" style="visibility: hidden;">
-                <h1>Calories Per Week</h1>
-                <div class="caloriePerWeekResult">
-                    <p id="resultCaloriePerWeek"></p>
-                </div>
-            </div>
-
         </div>
-
     </div>
 
     <h1>History Calorie Consuming</h1>
-    <table>
+    <table id="historyConsumedTable">
         <thead>
             <tr>
                 <th>Week</th>
@@ -122,8 +136,10 @@
     <table id="food-table">
         <tbody id="food-table-body"></tbody>
     </table>
-    <button id="prev-page-btn">Previous Page</button>
-    <button id="next-page-btn">Next Page</button>
+    <div id="food-table-button-container">
+        <button id="prev-page-btn">Previous Page</button>
+        <button id="next-page-btn">Next Page</button>
+    </div>
 
     <!-- HTML code for the food details modal -->
     <!-- <div id="food-details-modal" class="modal">
@@ -131,66 +147,26 @@
             <span class="close">&times;</span>
             <h2 id="food-details-name"></h2>
             <img id="food-details-image" src="" alt="">
-            <p id="food-details-calories"></p>
+            <p id="food-details-calories" style="text-align: center;margin-top: 20px;"></p>
         </div>
     </div> -->
     <!-- Food Information -->
 
 
     <!---Auto Part--->
-    <h1>Exercise calorie burn calculator</h1>
-    <!-- <table>
-        <thead>
-            <tr>
-                <th colspan="5">List of Exercises</th>
-            </tr>
-            <tr>
-                <th>Exercises</th>
-                <th>Duration(minutes)</th>
-                <th>Day</th>
-                <th>Calories</th>
-                <th>Note</th>
-            </tr>
-        </thead>
-        <tbody id="exercise-table-body"></tbody>
-        <tfoot>
-            <tr>
-                <td>
-                    <select id="exercise-input"></select>
-                </td>
-                <td>
-                    <input type="number" id="duration-input" placeholder="Enter number" />
-                </td>
-                <td>
-                    <select id="day-selector">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                    </select>
-                </td>
-                <td></td>
-                <td><button type="button" onclick="addExercise()">Add</button></td>
-            </tr>
-            <tr>
-                <td id="total-output">Total Calories:</td>
-            </tr>
-        </tfoot>
-    </table> -->
-
-    <div class="exercise-calculator">
-        <p>Select your exercise : <select id="exercise-input"></select></p>
-        <label for="duration-input">Duration(minutes):</label>
-        <input type="number" id="duration-input" placeholder="Enter number"/>
-        <button type="button" onclick="calculateExceriseCalorie()">Calculate calorie burn</button>
-        <p id="excercise-result"></p>
-    </div>
-
-
-
+    <h1>Calories Calculator</h1>
+        <div id="exercise-body">
+            <div>
+                <div>
+                    <select id="exercise-input-value"></select>
+                </div>
+                <div>
+                    <input type="number" id="duration-input-value" placeholder="Enter number" />
+                </div>
+                <div id="exercise-output"></div>
+                <button onclick=addExercise()>submit</button>
+            </div>
+        </div>
     <!--------------->
 
     <!---Schwin--->

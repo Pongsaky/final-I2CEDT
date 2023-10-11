@@ -144,24 +144,25 @@ function updateTable() {
 
   let tableHtml = "";
   for (let i = 0; i < foodsToShow.length; i += 4) {
-    tableHtml += "<tr>";
+    tableHtml += `<tr>`;
     for (let j = 0; j < 4; j++) {
       const foodIndex = i + j;
       if (foodIndex < foodsToShow.length) {
         const food = foodsToShow[foodIndex];
         tableHtml += `
-          <td>
-            <img class="food-image" src="${food.image}" alt="${food.name}">
-            <p>${food.name}</p>
-            <p>${food.calories} แคลเลอรี่</p>
-            <p>คาร์โบไฮเดรต ${food.carbonhydrate} กรัม</p>
-            <p>โปรตีน ${food.protein} กรัม</p>
-            <p>ไขมัน ${food.fat} กรัม</p>
-
+          <td class="food-block-td>
+            <div class="food-block-div">
+              <img class="food-image" src="${food.image}" alt="${food.name}">
+              <p class="food-block-name">${food.name}</p>
+              <p>${food.calories} แคลเลอรี่</p>
+              <p>คาร์โบไฮเดรต ${food.carbonhydrate} กรัม</p>
+              <p>โปรตีน ${food.protein} กรัม</p>
+              <p>ไขมัน ${food.fat} กรัม</p>
+              </div>
           </td>
         `;
       } else {
-        tableHtml += "<td></td>";
+        tableHtml += `<td class="food-block-td"></td>`;
       }
     }
     tableHtml += "</tr>";
