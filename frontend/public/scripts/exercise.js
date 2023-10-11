@@ -17,8 +17,8 @@ async function loadNames() {
     exerciseInput.appendChild(option);
   });
 
-  var totalrow = document.getElementById("total-output");
-  totalrow.innerText = "Total Calories: " + total;
+  // var totalrow = document.getElementById("total-output");
+  // totalrow.innerText = "Total Calories: " + total;
 }
 
 loadNames();
