@@ -66,32 +66,32 @@ function updatePhoto(bodyFatPercentage) {
   const gender = document.getElementById("gender").value;
 
   if (gender == "male") {
-    if (bodyFatPercentage > 35) photoElement.src = "assets/img/man/35-man.jpg";
+    if (bodyFatPercentage > 35) photoElement.src = "assets/img/man/35-man.png";
     else if (bodyFatPercentage > 30)
-      photoElement.src = "assets/img/man/30-man.jpg";
+      photoElement.src = "assets/img/man/30-man.png";
     else if (bodyFatPercentage > 25)
-      photoElement.src = "assets/img/man/25-man.jpg";
+      photoElement.src = "assets/img/man/25-man.png";
     else if (bodyFatPercentage > 20)
-      photoElement.src = "assets/img/man/20-man.jpg";
+      photoElement.src = "assets/img/man/20-man.png";
     else if (bodyFatPercentage > 15)
-      photoElement.src = "assets/img/man/15-man.jpg";
+      photoElement.src = "assets/img/man/15-man.png";
     else if (bodyFatPercentage > 12)
-      photoElement.src = "assets/img/man/12-man.jpg";
-    else photoElement.src = "assets/img/man/8-man.jpg";
+      photoElement.src = "assets/img/man/12-man.png";
+    else photoElement.src = "assets/img/man/8-man.png";
   } else {
     if (bodyFatPercentage > 45)
-      photoElement.src = "assets/img/woman/45-woman.jpg";
+      photoElement.src = "assets/img/woman/45-woman.png";
     else if (bodyFatPercentage > 40)
-      photoElement.src = "assets/img/woman/40-woman.jpg";
+      photoElement.src = "assets/img/woman/40-woman.png";
     else if (bodyFatPercentage > 35)
-      photoElement.src = "assets/img/woman/35-woman.jpg";
+      photoElement.src = "assets/img/woman/35-woman.png";
     else if (bodyFatPercentage > 30)
-      photoElement.src = "assets/img/woman/30-woman.jpg";
+      photoElement.src = "assets/img/woman/30-woman.png";
     else if (bodyFatPercentage > 25)
-      photoElement.src = "/assets/img/woman/25-woman.jpg";
+      photoElement.src = "/assets/img/woman/25-woman.png";
     else if (bodyFatPercentage > 20)
-      photoElement.src = "assets/img/woman/20-woman.jpg";
-    else photoElement.src = "assets/img/woman/15-woman.jpg";
+      photoElement.src = "assets/img/woman/20-woman.png";
+    else photoElement.src = "assets/img/woman/15-woman.png";
   }
 }
 
