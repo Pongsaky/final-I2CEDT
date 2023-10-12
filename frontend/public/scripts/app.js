@@ -1,8 +1,8 @@
 function handleClick() {
     const scrollPosition = window.scrollY;
-    if (scrollPosition < 1200) {
+    if (scrollPosition < 1000) {
         window.scrollTo({
-            top: 1200,
+            top: 1000,
             behavior: 'smooth'
         });
     }
